@@ -1,5 +1,11 @@
 from flask import Flask, request, jsonify
 from api.routes import prompt_bp, prompt
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+token = os.getenv("SECRET_KEY")
 
 def create_app():
 
