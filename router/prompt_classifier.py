@@ -1,7 +1,12 @@
 import ollama
+import os
+
+OLLAMA_URL = os.getenv("OLLAMA_URL")
+
+client = ollama.Client(host=OLLAMA_URL)
 
 def decider(prompt):
-    response = ollama.chat(model="mistral",messages=[{
+    response = client.chat(model="mistral",messages=[{
         "role": "user",
         "content":
         f"""
