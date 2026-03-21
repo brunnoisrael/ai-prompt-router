@@ -5,13 +5,12 @@ OLLAMA_URL = os.getenv("OLLAMA_URL")
 
 class OllamaClient:
     def ollama_llm(self, model, prompt):
-        print(model)
         response = requests.post(f"{OLLAMA_URL}/api/generate", json={
             "model": model,
             "prompt": prompt,
             "stream": False
         },
-        timeout=30)
+        timeout=150)
 
         response.raise_for_status()
         data = response.json()
