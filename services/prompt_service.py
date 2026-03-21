@@ -11,5 +11,6 @@ from llm.ollama_client import OllamaClient
 def workload(prompt):
     classified_prompt = decider(prompt)
     result_workload = gateway(classified_prompt)
-    response_llm = OllamaClient.ollama_llm(result_workload)
+    client = OllamaClient()
+    response_llm = client.ollama_llm(model=result_workload, prompt=prompt)
     return response_llm
