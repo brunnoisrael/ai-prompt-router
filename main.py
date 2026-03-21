@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
-from api.routes import prompt_bp, prompt
 import os
 from dotenv import load_dotenv
+from api.routes import prompt_bp, prompt
 
 load_dotenv()
 
