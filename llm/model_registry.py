@@ -5,13 +5,13 @@ class ModelRegistry:
                 "capabilities": ["code", "debug"]
             },
             "llama3": {
-                "capabilities": ["geral", "explicação"]
+                "capabilities": ["general", "explanation"]
             },
             "mistral": {
-                "capabilities": ["análises", "explicação"]
+                "capabilities": ["analysis", "explanation"]
             },
             "phi3": {
-                "capabilities": ["pergunta_curta", "rápido"]
+                "capabilities": ["short_query", "fast"]
             }
         }
     def models_for_capabilities(self, capability:str):
