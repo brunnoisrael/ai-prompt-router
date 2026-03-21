@@ -50,7 +50,8 @@ app/
 docker/
 │
 ├── Dockerfile
-└── docker-compose.yml
+├── docker-compose.yml
+└── prometheus.yml
 
 requirements.txt
 README.md
