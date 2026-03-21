@@ -1,21 +1,12 @@
-import ollama
+from llm.model_registry import ModelRegistry
 
 def gateway(classified_prompt):
     classified_prompt = classified_prompt.strip()
-    modelo = ""
-    if classified_prompt == "code":
-        modelo = "mistral"
-    if classified_prompt == "genaral":
-        modelo = "gpt"
-    response = ollama.chat(model=modelo,messages=[{
-        "role": "user",
-        "content": f"""
-        RESPONDA EM PORTUGUES CASO NAO DETECTE IDIOMA EXPLICITO
-
-        {classified_prompt}
-
-        """,
-    }
-    ])
-    resultado = response.message.content
-    return resultado
+    registry = ModelRegistry()
+    models = registry.get_default_model(classified_prompt)
+    if models:
+        model = models[0]
+    else:
+        model = registry.get_default_model()
+    
+    return model
