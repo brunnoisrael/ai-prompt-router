@@ -1,10 +1,11 @@
 import requests
 import os
 
-OLLAMA_URL = os.getenv("OLLMA_URL")
+OLLAMA_URL = os.getenv("OLLAMA_URL")
 
 class OllamaClient:
     def ollama_llm(self, model, prompt):
+        print(model)
         response = requests.post(f"{OLLAMA_URL}/api/generate", json={
             "model": model,
             "prompt": prompt,
