@@ -45,13 +45,6 @@ app/
 │   ├── ollama_client.py       # Integração com Ollama
 │   └── model_registry.py      # Catálogo de modelos e capabilities
 │
-├── config/
-│   └── settings.py            # (Opcional - não implementado ainda)
-│
-├── schemas/
-│   ├── request.py             # (Opcional - não implementado ainda)
-│   └── response.py            # (Opcional - não implementado ainda)
-│
 └── main.py                    # Inicialização da aplicação
 
 docker/
@@ -146,7 +139,7 @@ pip install -r requirements.txt
 Crie um arquivo `.env`:
 
 ```
-API_TOKEN=seu_token_aqui
+SECRET_KEY=seu_token_aqui
 OLLAMA_URL=http://localhost:11434
 ```
 
