@@ -12,7 +12,7 @@ services:
     ports:
       - "11434:11434"
     volumes:
-      - E:\models:/root/.ollama/models
+      - C:\my_models:/root/.ollama/models
 
   prometheus:
     image: prom/prometheus
